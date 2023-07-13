@@ -15,6 +15,6 @@ manage human necessities like energy and hunger.
    pip install -r requirements.txt
    ```
 3. Run the main file
-```bash
+   ```bash
    python3 main.py
    ```
