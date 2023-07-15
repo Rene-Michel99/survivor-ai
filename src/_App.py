@@ -1,5 +1,7 @@
 import pygame
+
 from ._Entity import Entity
+from src.ML import DecisionTree
 
 
 class App:
@@ -24,9 +26,18 @@ class App:
 
     def set_sprites(self):
         self.background = pygame.image.load('src/static/images/Sprite-0006.png').convert_alpha()
+
+        decision_tree = DecisionTree('src/static/models/decision_tree.joblib')
         self.entities.extend([
-            Entity('src/static/images/boy.png', name='npc1', start_node=1, show_data='top'),
-            Entity('src/static/images/boy2.png', name='npc2', start_node=11, show_data='bottom')
+            Entity(
+                'src/static/images/boy.png', name='npc1',
+                ml_model=decision_tree, choose_house=4,
+                start_node=1, show_data='top'
+            ),
+            Entity(
+                'src/static/images/boy2.png', name='npc2',
+                ml_model=decision_tree, choose_house=10,
+                start_node=11, show_data='bottom')
         ])
 
     def on_event(self, event):

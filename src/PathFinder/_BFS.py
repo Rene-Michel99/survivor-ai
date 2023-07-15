@@ -1,5 +1,5 @@
 class BFS:
-    def __init__(self):
+    def __init__(self, choose_house):
         graph = {
             0: [1],
             1: [0, 2, 3, 4],
@@ -48,7 +48,22 @@ class BFS:
             20: (121, 75), # restaurant
             21: (56, 190), # work
         }
+        self._survivor_house = choose_house
         self.graph = graph
+
+    def get_node_by_necessity(self, node_name: str) -> int:
+        if node_name == 'hunger':
+            return 20
+        if node_name == 'health':
+            return 18
+        if node_name == 'energy':
+            return 0 if self._survivor_house == 4 else 12
+        if node_name == 'hygiene':
+            return 2 if self._survivor_house == 4 else 13
+        if node_name == 'bladder':
+            return 3 if self._survivor_house == 4 else 14
+        if node_name == 'nothing':
+            return 21
 
     def get_coord_node(self, node: int) -> tuple:
         return self._coords_by_node.get(node)
