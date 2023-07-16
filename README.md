@@ -4,6 +4,12 @@ machine learning algorithm is best for
 manage human necessities like energy and hunger.
 ![](src/static/images/demo.gif)
 
+# Requirements
+- Python >= 3.8
+- OS: Any
+- For graphviz lib (used in [Train_survivor](src/ML/Train_survivor.ipynb)) utilization in linux systems
+it may be necessary to install libstdcxx-ng
+
 # Installation
 1. Clone this repository
     ```bash

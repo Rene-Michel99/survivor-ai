@@ -1,7 +1,7 @@
 import pygame
 
 from ._Entity import Entity
-from src.ML import DecisionTree
+from src.ML import DecisionTree, RandomForest
 
 
 class App:
@@ -28,6 +28,7 @@ class App:
         self.background = pygame.image.load('src/static/images/Sprite-0006.png').convert_alpha()
 
         decision_tree = DecisionTree('src/static/models/decision_tree.joblib')
+        random_forest = RandomForest('src/static/models/random_forest.joblib')
         self.entities.extend([
             Entity(
                 'src/static/images/boy.png', name='npc1',
@@ -36,7 +37,7 @@ class App:
             ),
             Entity(
                 'src/static/images/boy2.png', name='npc2',
-                ml_model=decision_tree, choose_house=10,
+                ml_model=random_forest, choose_house=10,
                 start_node=11, show_data='bottom')
         ])
 
