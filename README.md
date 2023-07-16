@@ -3,6 +3,12 @@ A simple game environment to test which
 machine learning algorithm is best for
 manage human necessities like energy and hunger.
 ![](src/static/images/demo.gif)
+For default, the survivors can use Random Forest
+or Decision Tree algorithms to make decisions.
+To make the survivor move to the desired destiny
+the BFS algorithm to search the best path to destiny.
+The graph of the game is in below image.
+![](src/static/images/graph_explaining.png)
 
 # Requirements
 - Python >= 3.8
